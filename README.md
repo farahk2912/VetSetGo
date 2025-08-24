@@ -1,5 +1,6 @@
 # VetSetGo
 project name : VetSetGo
+
 description : This platform provides an integrated hub for pet owners, designed to make pet care easier, more accessible, and more engaging. It facilitates seamless access to veterinary services, appointment booking. The platform also raises awareness about essential aspects of pet care including nutrition, training, and health through reliable resources and reminders. Beyond care, it fosters a community space where pet owners can connect, exchange experiences, and explore adoption or lost-and-found opportunities, ensuring pets find loving homes. 
 
 members:
