@@ -22,4 +22,4 @@ Smart Filters → search by pet type, age, or location.
 Community Forum → share experiences, tips, and connect with other pet owners.
 Communication System → built-in messaging between adopters and pet owners.
 
-Educational Resources → articles and guides on nutrition, training, and health care.
+
