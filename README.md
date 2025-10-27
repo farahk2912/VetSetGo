@@ -1,18 +1,25 @@
-# React + Vite
+# VetSetGo
+project name : VetSetGo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+description : This platform provides an integrated hub for pet owners, designed to make pet care easier, more accessible, and more engaging. It facilitates seamless access to veterinary services, appointment booking. The platform also raises awareness about essential aspects of pet care including nutrition, training, and health through reliable resources and reminders. Beyond care, it fosters a community space where pet owners can connect, exchange experiences, and explore adoption or lost-and-found opportunities, ensuring pets find loving homes. 
 
-Currently, two official plugins are available:
+members:
+Farah Khaled Gamal (team leader)
+Malak Ahmed Mostafa
+Jana Tamer Ahmed
+Abdullah Ahmed Mahmoud
+Omar Mohammed Mohammed
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+objective:
+To provide an integrated digital platform that supports pet owners in every aspect of pet care by facilitating access to veterinary services and pet supply stores, raising awareness on nutrition, training, and health, and fostering a community for experience sharing, communication, and adoption opportunities.
 
-## React Compiler
+features:-
+Interactive Map → locate nearby veterinary clinics & pet supply stores.
+Appointment Booking → schedule visits with veterinarians easily.
+Reminders & Alerts → vaccination dates, vet visits, and health check notifications.
+Pet Adoption & Lost/Found Section → browse or post pets for adoption; report lost pets.
+Smart Filters → search by pet type, age, or location.
+Community Forum → share experiences, tips, and connect with other pet owners.
+Communication System → built-in messaging between adopters and pet owners.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
