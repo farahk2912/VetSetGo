@@ -1,8 +1,13 @@
-import Profile from "./pages/profile";
+import Home from "./pages/Home";
+
+
+
 function App() {
   return (
-    <div className="profile">
-    <Profile/>
+    <div>
+
+      <Home />
+    
     </div>
 
   );
