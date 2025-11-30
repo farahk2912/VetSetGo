@@ -1,0 +1,10 @@
+.nav-link-custom {
+  text-decoration: none;
+  color: #7472C6;
+  transition: 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #7544A6;      /* Hover color */
+  transform: scale(1.05); /* Slight zoom effect */
+}
