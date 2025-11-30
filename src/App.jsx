@@ -1,30 +1,19 @@
-<<<<<<< HEAD
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Adopt from "./pages/Adopt/Adopt";
-
-function App() {
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/adopt" element={<Adopt />} />
-        </Routes>
-=======
-import { Routes, Route } from "react-router-dom";
-import HospitalsPage from "./pages/HospitalsPage";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import Profile from "./pages/profile";
+import { PetProvider } from "./components/petContext";
 
 function App() {
-    return (
-        <>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<HospitalsPage />} />
-            </Routes>
-        </>
->>>>>>> f0a5834 (hospitals)
-    );
+  return (
+    <PetProvider>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </PetProvider>
+  );
 }
 
 export default App;

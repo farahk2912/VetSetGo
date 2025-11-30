@@ -1,0 +1,46 @@
+.card {
+  width: 280px;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  border: 0.1em solid transparent;
+}
+
+.card:hover {
+  border-color: #b57aff;
+  box-shadow: 0px 6px 25px rgba(103, 55, 161, 0.324);
+  transform: translateY(-4px);
+}
+
+.icon-circle {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1em auto;
+   transition: transform 0.3s ease;
+}
+
+.icon-size {
+  font-size: 1.7em;
+  color: white;
+ 
+}
+.card:hover .icon-circle {
+  transform: scale(1.18); 
+}
+.smallertext {
+  color: #7a7a7a;
+  font-size: 1em;
+}
+
+.biggertext {
+  color: #000;
+  font-size: 1.29em;
+  font-weight: 600;
+}
