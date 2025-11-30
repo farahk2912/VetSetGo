@@ -1,0 +1,12 @@
+
+.input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #E4E1EE; /* أو أي لون تحبيه */
+}
+
+
+
+textarea {
+  resize: none;
+}
