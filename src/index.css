@@ -1,0 +1,19 @@
+.gradient-btn {
+  background: linear-gradient(90deg, #c374d7 0%, #7674d7 100%);
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.gradient-btn:hover {
+  opacity: 0.85;
+}
+.hero-content-wrapper {
+  padding-bottom: 120px; /* space above the features section */
+}
+
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    padding-bottom: 180px; /* more space on mobile */
+  }
+}

@@ -15,11 +15,15 @@ To provide an integrated digital platform that supports pet owners in every aspe
 
 features:-
 Interactive Map → locate nearby veterinary clinics & pet supply stores.
+
 Appointment Booking → schedule visits with veterinarians easily.
+
 Reminders & Alerts → vaccination dates, vet visits, and health check notifications.
+
 Pet Adoption & Lost/Found Section → browse or post pets for adoption; report lost pets.
-Smart Filters → search by pet type, age, or location.
+
 Community Forum → share experiences, tips, and connect with other pet owners.
-Communication System → built-in messaging between adopters and pet owners.
+
+
 
 

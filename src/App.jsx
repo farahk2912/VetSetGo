@@ -1,15 +1,18 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Adopt from "./pages/Adopt/Adopt";
+import { Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import Navbar from "./Components/Navbar";
+import Profile from "./pages/profile"; // Changed from profile to Profile
+import { PetProvider } from "./Components/petContext"; 
 
 function App() {
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/adopt" element={<Adopt />} />
-        </Routes>
-    );
+  return (
+    <PetProvider>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </PetProvider>
+  );
 }
-
-export default App;
+export default App
