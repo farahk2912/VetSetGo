@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Profile from "./pages/profile";
-import { PetProvider } from "./components/petContext";
+import Navbar from "./Components/Navbar";
+import Profile from "./pages/profile"; // Changed from profile to Profile
+import { PetProvider } from "./Components/petContext"; 
 
 function App() {
   return (
@@ -15,5 +15,4 @@ function App() {
     </PetProvider>
   );
 }
-
-export default App;
+export default App
