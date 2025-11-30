@@ -24,9 +24,11 @@ const Navbar = () => {
         {/* Links for large screens */}
         <div className='d-none d-lg-flex justify-content-center flex-grow-1 pt-2 gap-5'>
           <Link to="/" className='pt-2 fs-4 fw-medium nav-link-custom'>Home</Link>
-          <Link to="/community" className='pt-2 fs-4 fw-medium nav-link-custom'>Community</Link>
+          <Link to="/Community" className='pt-2 fs-4 fw-medium nav-link-custom'>Community</Link>
           <Link to="/adopt" className='pt-2 fs-4 fw-medium nav-link-custom'>Adopt Me</Link>
           <Link to="/vets" className='pt-2 fs-4 fw-medium nav-link-custom'>Vets</Link>
+          <Link to="/Login" className='pt-2 fs-4 fw-medium nav-link-custom'>Login</Link>
+          <Link to="/signup" className='pt-2 fs-4 fw-medium nav-link-custom'>Sign Up</Link>
         </div>
 
         {/* User info for large screens */}
@@ -68,9 +70,11 @@ const Navbar = () => {
         <div className='d-lg-none py-2'>
           <div className='d-flex flex-column align-items-start px-3 gap-2'>
             <Link to="/" className='fs-4 fw-medium nav-link-custom'>Home</Link>
-            <Link to="/community" className='fs-4 fw-medium nav-link-custom'>Community</Link>
+            <Link to="/Community" className='fs-4 fw-medium nav-link-custom'>Community</Link>
             <Link to="/adopt" className='fs-4 fw-medium nav-link-custom'>Adopt Me</Link>
             <Link to="/vets" className='fs-4 fw-medium nav-link-custom'>Vets</Link>
+             <Link to="/Login" className='pt-2 fs-4 fw-medium nav-link-custom'>Login</Link>
+          <Link to="/signup" className='pt-2 fs-4 fw-medium nav-link-custom'>Sign Up</Link>
 
             <div className='d-flex align-items-center gap-2 mt-2'>
               <p className='text-secondary fs-4 m-0'>Hi,</p>
