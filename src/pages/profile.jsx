@@ -1,5 +1,5 @@
-import PetHeader from "../components/PetHeader";
-import PetCards from "../components/PetCards";
+import PetHeader from "../Components/PetHeader"; // Uppercase C
+import PetCards from "../Components/PetCards";   // Uppercase C
 
 function Profile() {
   return (
