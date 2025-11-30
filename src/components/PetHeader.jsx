@@ -2,14 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./PetHeader.css";
-import { usePet } from "./petContext";
-
 
 export default function PetHeader() {
-  const { pet } = usePet();
-
   return (
-    <div style={{ backgroundColor: "#fff", padding: "2em" }}>
+    <div style={{ backgroundColor: "#ffffffff", padding: "2em"}}>
+  
       <div
         className="container p-5 rounded-4 shadow"
         style={{
@@ -18,27 +15,26 @@ export default function PetHeader() {
         }}
       >
         <div className="d-flex align-items-center gap-4 flex-wrap">
-
-          {/* Pet image */}
+         
           <div
-            className="rounded-4 overflow-hidden shadow border border-white zoom"
+            className="rounded-4 overflow-hidden shadow border border-white zoom "
             style={{ width: "220px", height: "220px" }}
           >
             <img
-              src={pet.img}
-              alt={pet.name}
+              src="/images/max.png" 
+              alt="Pet"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </div>
 
-          {/* Pet info */}
+        
           <div>
-            <h1 style={{ fontSize: "4.3em", fontWeight: "700" }}>{pet.name}</h1>
-            <h3 style={{ fontWeight: "400" }}>{pet.breed}</h3>
+            <h1 style={{ fontSize: "4.3em", fontWeight: "700" }}>Luna</h1>
+            <h3 style={{ fontWeight: "400" }}>Golden Retriever</h3>
 
             <div className="d-flex gap-3 mt-3">
               <button className="btn btn-light px-4 py-2 fw-semibold">
-                Edit Profile
+              Edit Profile
               </button>
 
               <button
@@ -51,6 +47,6 @@ export default function PetHeader() {
           </div>
         </div>
       </div>
-    </div>
+        </div>
   );
 }
