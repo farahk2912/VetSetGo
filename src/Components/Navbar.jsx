@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className='d-none d-lg-flex justify-content-center flex-grow-1 pt-2 gap-5'>
           <Link to="/" className='pt-2 fs-4 fw-medium nav-link-custom'>Home</Link>
           <Link to="/Community" className='pt-2 fs-4 fw-medium nav-link-custom'>Community</Link>
-          <Link to="/adopt" className='pt-2 fs-4 fw-medium nav-link-custom'>Adopt Me</Link>
+          <Link to="/adopt-home" className='pt-2 fs-4 fw-medium nav-link-custom'>Adopt Me</Link>
           <Link to="/vets" className='pt-2 fs-4 fw-medium nav-link-custom'>Vets</Link>
           <Link to="/Login" className='pt-2 fs-4 fw-medium nav-link-custom'>Login</Link>
           <Link to="/signup" className='pt-2 fs-4 fw-medium nav-link-custom'>Sign Up</Link>

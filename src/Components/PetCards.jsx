@@ -22,7 +22,7 @@ export default function PetCards() {
       icon: "bi-brush",
       smalltext: "Breed",
       bigtext: pet.breed,
-      bg: "#F5A6CF"
+      bg: "#f295c5ff"
     }
   ];
 
