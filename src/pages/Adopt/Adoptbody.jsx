@@ -2,38 +2,38 @@ import React from "react";
 
 const Adoptbody = () => {
     const pets = [
-        { name: "Leo", age: "3 months", gender: "Male", img: "/dog1.jpeg" },
-        { name: "Max", age: "2 years", gender: "Male", img: "/dog2.jpeg" },
+        { name: "Leo", age: "3 months", gender: "Male", img: "/images/dog1.jpeg" },
+        { name: "Max", age: "2 years", gender: "Male", img: "/images/dog2.jpeg" },
         {
             name: "Lily & Luna",
             age: "7 months",
             gender: "Females",
-            img: "/cat1.jpeg",
+            img: "/images/cat1.jpeg",
         },
-        { name: "Muffin", age: "1 year", gender: "Male", img: "/cat2.jpeg" },
+        { name: "Muffin", age: "1 year", gender: "Male", img: "/images/cat2.jpeg" },
         {
             name: "Bunny",
             age: "8 months",
             gender: "Female",
-            img: "/rabbit1.jpeg",
+            img: "/images/rabbit1.jpeg",
         },
         {
             name: "Peanut",
             age: "10 months",
             gender: "Male",
-            img: "/rabbit2.jpeg",
+            img: "/images/rabbit2.jpeg",
         },
-        { name: "Robin", age: "3 months", gender: "Male", img: "/bird1.jpeg" },
-        { name: "Buddy", age: "5 months", gender: "Male", img: "/bird2.jpeg" },
+        { name: "Robin", age: "3 months", gender: "Male", img: "/images/bird1.jpeg" },
+        { name: "Buddy", age: "5 months", gender: "Male", img: "/images/bird2.jpeg" },
         {
             name: "Shelly",
             age: "2 years",
             gender: "Female",
-            img: "/turtle1.jpeg",
+            img: "/images/turtle1.jpeg",
         },
-        { name: "Olive", age: "3 years", gender: "Male", img: "/turtle2.jpeg" },
-        { name: "Star", age: "4 years", gender: "Female", img: "/horse1.jpg" },
-        { name: "Blaze", age: "5 years", gender: "Male", img: "/horse2.jpg" },
+        { name: "Olive", age: "3 years", gender: "Male", img: "/images/turtle2.jpeg" },
+        { name: "Star", age: "4 years", gender: "Female", img: "/images/horse1.jpg" },
+        { name: "Blaze", age: "5 years", gender: "Male", img: "/images/horse2.jpg" },
     ];
 
     return (

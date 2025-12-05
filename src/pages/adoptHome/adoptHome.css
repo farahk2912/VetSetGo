@@ -1,17 +1,12 @@
 
 
-body {
-    font-family: Arial, sans-serif;
-   
-}
-
 /* --- Buttons --- */
 .btn-primary-custom {
     background-color: #7674d7 !important;
     border-color: #7674d7 !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     font-weight: 500;
-    color: white !important;
+    color: #ffffff !important;
 }
 
 .btn-primary-custom:hover {
