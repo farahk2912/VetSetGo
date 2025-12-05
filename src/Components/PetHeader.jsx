@@ -9,7 +9,7 @@ export default function PetHeader() {
   const { pet } = usePet();
 
   return (
-    <div style={{ backgroundColor: "#fff", padding: "2em" }}>
+    <div style={{ backgroundColor: "#ffffff", padding: "2em" }}>
       <div
         className="container p-5 rounded-4 shadow"
         style={{
@@ -19,7 +19,7 @@ export default function PetHeader() {
       >
         <div className="d-flex align-items-center gap-4 flex-wrap">
 
-          {/* Pet image */}
+          {}
           <div
             className="rounded-4 overflow-hidden shadow border border-white zoom"
             style={{ width: "220px", height: "220px" }}
@@ -31,14 +31,14 @@ export default function PetHeader() {
             />
           </div>
 
-          {/* Pet info */}
+          {}
           <div>
             <h1 style={{ fontSize: "4.3em", fontWeight: "700" }}>{pet.name}</h1>
             <h3 style={{ fontWeight: "400" }}>{pet.breed}</h3>
 
             <div className="d-flex gap-3 mt-3">
               <button className="btn btn-light px-4 py-2 fw-semibold">
-                Edit Profile
+               Hiii!
               </button>
 
               <button
