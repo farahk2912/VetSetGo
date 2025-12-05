@@ -1,29 +1,27 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home";
-import Navbar from "./Components/Navbar";
-import Profile from "./pages/profile"; // Changed from profile to Profile
-import { PetProvider } from "./Components/petContext"; 
-import Community from "./pages/Community"
-import LogInpage from './pages/Login-page/LogInpage';
-import CommunityPage2 from './Components/CommunityPage2';
-import SignUPpage from './pages/Signup-page/SignUPpage';
-import AdoptHome from "./pages/adoptHome/adoptHome";
-import Adopt from "./pages/Adopt/Adopt";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HospitalsPage from "./Pages/HospitalsPage";
+import "./index.css";
 
 function App() {
-  return (
-    <PetProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Community" element={<CommunityPage2 />} />
-        <Route path="/Login" element={<LogInpage />} />
-        <Route path="/signup" element={<SignUPpage />} />
-         <Route path="/adopt-home" element={<AdoptHome />} />
-        <Route path="/adopt" element={<Adopt />} />
-      </Routes>
-    </PetProvider>
-  );
+    return (
+        <div
+            style={{
+                height: "100vh",
+                display: "flex",
+                flexDirection: "column",
+            }}
+        >
+            <Navbar />
+
+            <div style={{ flexGrow: 1 }}>
+                <Routes>
+                    <Route path="/" element={<HospitalsPage />} />
+                </Routes>
+            </div>
+        </div>
+    );
 }
-export default App
+
+export default App;
