@@ -1,10 +1,16 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import AdoptHome from "./pages/adoptHome/adoptHome.jsx";
+import Adopt from "./pages/Adopt/Adopt";
+
 function App() {
-  return (
-    <div className="container py-5">
-      <h1 className="text-primary">Bootstrap is Working! 🚀</h1>
-      <button className="btn btn-success">Click Me</button>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<AdoptHome/>} />
+            <Route path="/adopt" element={<Adopt />} />
+
+        </Routes>
+    );
 }
 
 export default App;
