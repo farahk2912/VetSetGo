@@ -79,12 +79,7 @@ const MapView = () => {
         <MapContainer
             center={userLocation || defaultPosition}
             zoom={13}
-            style={{
-                height: "100%",
-                width: "100%",
-                borderRadius: "16px",
-                backgroundColor: "#E5E1EE",
-            }}
+            style={{ height: "100%", width: "100%", borderRadius: "16px" }}
         >
             <TileLayer
                 url={`https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token=${JAWG_ACCESS_TOKEN}`}
@@ -101,9 +96,7 @@ const MapView = () => {
                 >
                     <Popup>
                         <div style={{ textAlign: "center", color: "#7472C6" }}>
-                            <strong style={{ color: "#7472C6" }}>
-                                {vet.name}
-                            </strong>
+                            <strong>{vet.name}</strong>
                             <br />
                             <span>{vet.address}</span>
                         </div>

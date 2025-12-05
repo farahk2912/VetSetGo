@@ -17,20 +17,21 @@ export const BookingModal = ({ vet, onClose }) => {
             <div
                 className="modal-content-custom"
                 onClick={(e) => e.stopPropagation()}
-                style={{ backgroundColor: "#E5E1EE" }}
             >
                 <div className="d-flex justify-content-between align-items-center mb-4">
                     <h5 className="fw-bold m-0" style={{ color: "#7472C6" }}>
                         Book with {vet.name}
                     </h5>
                     <FaTimes
-                        className="cursor-pointer"
                         onClick={onClose}
                         style={{ cursor: "pointer", color: "#7472C6" }}
                     />
                 </div>
 
-                <p className="small mb-3" style={{ color: "#7472C6" }}>
+                <p
+                    className="text-muted small mb-3"
+                    style={{ color: "#7472C6" }}
+                >
                     Select an available time slot for tomorrow:
                 </p>
 
@@ -41,8 +42,8 @@ export const BookingModal = ({ vet, onClose }) => {
                                 className="btn w-100 rounded-3 py-2 text-sm"
                                 style={{
                                     backgroundColor: "#7472C6",
-                                    borderColor: "#7472C6",
-                                    color: "#E5E1EE",
+                                    color: "#fff",
+                                    border: "none",
                                 }}
                                 onClick={() => alert(`Booked ${time}!`)}
                             >
@@ -56,8 +57,8 @@ export const BookingModal = ({ vet, onClose }) => {
                     className="btn w-100 rounded-pill py-2"
                     style={{
                         backgroundColor: "#7472C6",
-                        borderColor: "#7472C6",
-                        color: "#E5E1EE",
+                        color: "#fff",
+                        border: "none",
                     }}
                     onClick={onClose}
                 >
@@ -76,12 +77,11 @@ export const DetailsModal = ({ vet, onClose }) => {
             <div
                 className="modal-content-custom"
                 onClick={(e) => e.stopPropagation()}
-                style={{ backgroundColor: "#E5E1EE" }}
             >
                 <button
                     className="btn-close position-absolute top-0 end-0 m-4"
                     onClick={onClose}
-                    style={{ filter: "invert(40%)" }}
+                    style={{ color: "#7472C6" }}
                 ></button>
 
                 <div className="text-center mb-4">
@@ -102,7 +102,7 @@ export const DetailsModal = ({ vet, onClose }) => {
                 </div>
 
                 <div
-                    className="p-3 rounded-3 mb-3"
+                    className="bg-light p-3 rounded-3 mb-3"
                     style={{ backgroundColor: "#E5E1EE" }}
                 >
                     <h6
@@ -121,7 +121,7 @@ export const DetailsModal = ({ vet, onClose }) => {
                     <span className="fw-bold" style={{ color: "#7472C6" }}>
                         Consultation Fee
                     </span>
-                    <span className="fw-bold" style={{ color: "#7472C6" }}>
+                    <span style={{ color: "#7472C6", fontWeight: "bold" }}>
                         $45.00
                     </span>
                 </div>

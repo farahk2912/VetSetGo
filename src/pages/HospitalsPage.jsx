@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaPaw } from "react-icons/fa";
-import MapView from "../components/MapView";
-import VetCard from "../components/VetCard";
-import { BookingModal, DetailsModal } from "../components/Modals";
+import MapView from "../Components/MapView";
+import VetCard from "../Components/VetCard";
+import { BookingModal, DetailsModal } from "../Components/Modals";
 import { mockVets } from "../data/mockVets";
 
 function HospitalsPage() {
@@ -53,13 +53,18 @@ function HospitalsPage() {
                 </header>
 
                 <div
-                    className="d-flex flex-grow-1 gap-4 p-4 flex-column flex-lg-row"
-                    style={{ overflow: "hidden" }}
+                    className="d-flex flex-grow-1 gap-4 p-4 flex-column flex-lg-row overflow-visible overflow-lg-hidden"
+                    style={{
+                        flex: 1,
+                        minHeight: 0,
+                    }}
                 >
                     <div
                         className="d-flex flex-column order-2 order-lg-1"
                         style={{
                             flexBasis: "52%",
+                            flex: 1,
+                            minHeight: 0,
                             overflowY: "auto",
                             minWidth: 300,
                             paddingRight: "10px",
@@ -87,11 +92,15 @@ function HospitalsPage() {
                         className="d-flex flex-column order-1 order-lg-2"
                         style={{
                             flexBasis: "48%",
-                            minHeight: "100%",
+                            flex: 1,
+                            minHeight: 0,
                             marginBottom: "1rem",
                         }}
                     >
-                        <div className="card border-0 shadow-sm rounded-4 overflow-hidden flex-grow-1 h-100">
+                        <div
+                            className="card border-0 shadow-sm rounded-4 overflow-hidden flex-grow-1 h-100"
+                            style={{ minHeight: 0 }}
+                        >
                             <MapView vets={mockVets} />
                         </div>
                     </div>

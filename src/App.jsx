@@ -1,19 +1,27 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Profile from "./pages/profile";
-import { PetProvider } from "./components/petContext";
+
+import HospitalsPage from "./Pages/HospitalsPage";
+import "./index.css";
 
 function App() {
-  return (
-    <PetProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </PetProvider>
-  );
+    return (
+        <div
+            style={{
+                height: "100vh",
+                display: "flex",
+                flexDirection: "column",
+            }}
+        >
+       
+
+            <div style={{ flexGrow: 1 }}>
+                <Routes>
+                    <Route path="/" element={<HospitalsPage />} />
+                </Routes>
+            </div>
+        </div>
+    );
 }
 
 export default App;

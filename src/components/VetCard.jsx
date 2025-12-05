@@ -18,7 +18,6 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                         objectFit: "cover",
                     }}
                 />
-
                 <div className="flex-grow-1">
                     <div className="d-flex justify-content-between align-items-start">
                         <h6
@@ -33,7 +32,7 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                                     ? "bg-success-subtle text-success"
                                     : "bg-danger-subtle text-danger"
                             }`}
-                            style={{ fontSize: "0.75rem", color: "#7472C6" }}
+                            style={{ fontSize: "0.75rem" }}
                         >
                             {vet.isOpen ? "Open" : "Closed"}
                         </span>
@@ -43,8 +42,7 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                         className="small mb-1 d-flex align-items-center gap-2"
                         style={{ color: "#7472C6" }}
                     >
-                        <FaMapMarkerAlt style={{ color: "#7472C6" }} />{" "}
-                        {vet.address}
+                        <FaMapMarkerAlt /> {vet.address}
                     </p>
 
                     <div
@@ -53,8 +51,7 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                     >
                         <FaStar /> <b>{vet.rating}</b>{" "}
                         <span
-                            className="fw-normal"
-                            style={{ color: "#7472C6" }}
+                            style={{ fontWeight: "normal", color: "#7472C6" }}
                         >
                             (120 reviews)
                         </span>
@@ -65,18 +62,22 @@ const VetCard = ({ vet, onBook, onDetails }) => {
             <div className="d-flex gap-3 mt-4">
                 <button
                     onClick={() => onDetails(vet)}
-                    className="btn btn-light btn-sm flex-grow-1 rounded-pill fw-semibold py-2 border"
-                    style={{ color: "#7472C6", borderColor: "#7472C6" }}
+                    className="btn w-100 rounded-pill fw-semibold py-2"
+                    style={{
+                        backgroundColor: "#7472C6",
+                        color: "#fff",
+                        border: "none",
+                    }}
                 >
                     View Details
                 </button>
                 <button
                     onClick={() => onBook(vet)}
-                    className="btn btn-sm flex-grow-1 rounded-pill fw-semibold py-2 shadow-sm"
+                    className="btn w-100 rounded-pill fw-semibold py-2"
                     style={{
                         backgroundColor: "#7472C6",
-                        borderColor: "#7472C6",
-                        color: "#E5E1EE",
+                        color: "#fff",
+                        border: "none",
                     }}
                 >
                     Book Appointment
