@@ -3,9 +3,9 @@ import "./adoptHome.css";
 import { Link } from "react-router-dom";
 import { FaPaw } from "react-icons/fa"; // Paw icon
 
-function Home() {
+function adoptHome() {
     return (
-        <div
+       <div
             className="app-wrapper d-flex justify-content-center align-items-center min-vh-100 w-100"
             style={{
                 backgroundColor: "#afaee1ff",
@@ -125,4 +125,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default adoptHome;
