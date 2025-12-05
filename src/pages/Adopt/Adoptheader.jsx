@@ -8,7 +8,7 @@ const Adoptheader = () => {
         <div className="mb-4">
             <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center gap-2">
-                    <FaPaw className="fs-3 text-primary" />
+                    <FaPaw className=" Pawicon fs-3"/>
                     <h5 className="fw-bold m-0">Adopt a Pet</h5>
                 </div>
                 <CgProfile className="fs-3 text-secondary" />
@@ -26,12 +26,7 @@ const Adoptheader = () => {
                         />
                     </div>
                 </div>
-                <button
-                    style={{ backgroundColor: "#7674D7" }}
-                    className="btn fw-bold px-4 text-white"
-                >
-                    View Pets
-                </button>
+              
             </div>
         </div>
     );

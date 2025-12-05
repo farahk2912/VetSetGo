@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "./adoptHome.css";
 import { Link } from "react-router-dom";
 import { FaPaw } from "react-icons/fa"; // Paw icon
 
@@ -8,7 +8,7 @@ function Home() {
         <div
             className="app-wrapper d-flex justify-content-center align-items-center min-vh-100 w-100"
             style={{
-                backgroundColor: "#F1F9FC",
+                backgroundColor: "#afaee1ff",
                 padding: "1.25rem",
             }}
         >
@@ -23,7 +23,7 @@ function Home() {
                 {/* Header */}
                 <header className="d-flex justify-content-between align-items-center mb-4 flex-nowrap">
                     <div className="d-flex align-items-center gap-2">
-                        <FaPaw className="fs-3 text-primary" />
+                        <FaPaw className="fs-3 Pawicon" />
                         <h5 className="fw-bold m-0 text-dark">Adopt a Pet</h5>
                     </div>
 
@@ -34,9 +34,11 @@ function Home() {
                         >
                             Adopt
                         </Link>
-                        <span className="fw-semibold text-dark small nav-link-custom">
+                        <Link
+                  to="/Community"
+                        className="fw-semibold text-dark small nav-link-custom">
                             Community
-                        </span>
+                        </Link>
                         <img
                             src="https://previews.123rf.com/images/21aozora/21aozora2402/21aozora240200012/231408867-default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette.jpg"
                             alt="User profile icon"
@@ -108,9 +110,13 @@ function Home() {
                             <p className="mb-3 flex-grow-1 text-danger fw-medium">
                                 “My cat is not eating. What should I do?”
                             </p>
-                            <button className="btn btn-primary-custom px-3 py-2 align-self-start">
-                                Ask
-                            </button>
+
+                             <Link
+                            to="/Community"
+                            className="btn btn-primary-custom px-4 py-2 align-self-start"
+                        >
+                          Ask
+                        </Link>
                         </div>
                     </div>
                 </section>

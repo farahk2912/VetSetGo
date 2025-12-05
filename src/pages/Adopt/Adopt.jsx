@@ -7,7 +7,7 @@ function Adopt() {
     return (
         <div
             className="d-flex justify-content-center align-items-center min-vh-100 w-100"
-            style={{ backgroundColor: "#F1F9FC", padding: "1.25rem" }}
+            style={{ backgroundColor: "#afaee1ff", padding: "1.25rem" }}
         >
             <div
                 className="bg-white rounded-4 shadow p-4 p-md-5 d-flex flex-column justify-content-start"
