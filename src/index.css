@@ -9,11 +9,11 @@
   opacity: 0.85;
 }
 .hero-content-wrapper {
-  padding-bottom: 120px; /* space above the features section */
+  padding-bottom: 120px;
 }
 
 @media (max-width: 768px) {
   .hero-content-wrapper {
-    padding-bottom: 180px; /* more space on mobile */
+    padding-bottom: 180px; 
   }
 }
