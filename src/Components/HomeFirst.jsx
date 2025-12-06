@@ -27,7 +27,7 @@ const scrollToServices = () => {
       title: "ALL PET HOSPITALS IN ONE PLACE",
       description:
         "Finding the right care should be simple. VetSetGo brings together trusted veterinary hospitals across the country.",
-      link: "/hospitals"
+      link: "/Vets"
     },
     {
       icon: "🐾",

@@ -9,7 +9,7 @@ import CommunityPage2 from './Components/CommunityPage2';
 import SignUPpage from './pages/Signup-page/SignUPpage';
 import AdoptHome from "./pages/adoptHome/adoptHome";
 import Adopt from "./pages/Adopt/Adopt";
-
+import HospitalsPage from './pages/HospitalPage';
 function App() {
   return (
     <PetProvider>
@@ -22,6 +22,7 @@ function App() {
         <Route path="/signup" element={<SignUPpage />} />
          <Route path="/adopt-home" element={<AdoptHome />} />
         <Route path="/adopt" element={<Adopt />} />
+        <Route path="/Vets" element={<HospitalsPage />} />
       </Routes>
     </PetProvider>
   );
