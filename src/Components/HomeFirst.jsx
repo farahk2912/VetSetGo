@@ -1,9 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./HomeFirst.css";
 import { Link } from "react-router-dom";
 
+
 export default function HomeFirst() {
+
+const servicesRef = useRef(null);
+
+const scrollToServices = () => {
+  servicesRef.current?.scrollIntoView({ behavior: "smooth" });
+};
+
+
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -58,17 +67,24 @@ export default function HomeFirst() {
             You'll Love
           </h1>
 
-          <button
-            className="btn btn-lg rounded-pill px-5 fw-semibold text-uppercase gradient-btn"
-            style={{ letterSpacing: "1px" }}
-          >
-            Learn More
-          </button>
+      <button
+        onClick={scrollToServices}
+        className="btn btn-lg rounded-pill px-5 fw-semibold text-uppercase gradient-btn"
+        style={{ letterSpacing: "1px" }}
+      >
+        Learn More
+      </button>
+
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-5 position-relative" style={{ background: "linear-gradient(180deg, #faf5ff, #f3e8ff)" }}>
+      <section
+  ref={servicesRef}
+  className="py-5 position-relative"
+  style={{ background: "linear-gradient(180deg, #faf5ff, #f3e8ff)" }}
+>
+
         <div className="decorative-blob blob-1"></div>
         <div className="decorative-blob blob-2"></div>
 
@@ -95,9 +111,12 @@ export default function HomeFirst() {
           </div>
 
           <div className="text-center mt-5">
-            <button className="btn btn-lg rounded-pill px-5 fw-semibold gradient-btn">
-              Explore Our Services
-            </button>
+            <Link to="/signup">
+  <button className="btn btn-lg rounded-pill px-5 fw-semibold gradient-btn">
+    Create Your Account
+  </button>
+</Link>
+
           </div>
         </div>
       </section>
@@ -130,9 +149,12 @@ export default function HomeFirst() {
                 you’re searching for emergency care, hoping to adopt, or simply want advice, VetSetGo brings it all together.
               </p>
 
-              <button className="btn gradient-btn rounded-pill px-4 mt-3">
-                Learn More
-              </button>
+              <Link to="/adopt-home">
+  <button className="btn gradient-btn rounded-pill px-4 mt-3">
+    Learn More
+  </button>
+</Link>
+
             </div>
           </div>
         </div>

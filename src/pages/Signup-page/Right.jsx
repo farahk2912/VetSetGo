@@ -28,7 +28,7 @@ const Right = () => {
 
       <div className="d-flex gap-2 mt-4">
         <p className="fs-5 text-body-secondary">Already have an account?</p>
-        <a className="rounded-3 fs-5 fw-bold" href="" style={{ color: "#7544A6", textDecoration: "none", cursor: "pointer" }}>
+        <a href="/Login" className="rounded-3 fs-5 fw-bold"  style={{ color: "#7544A6", textDecoration: "none", cursor: "pointer" }}>
           Log In
         </a>
       </div>

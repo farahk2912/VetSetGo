@@ -27,7 +27,6 @@ const Navbar = () => {
           <Link to="/Community" className='pt-2 fs-4 fw-medium nav-link-custom'>Community</Link>
           <Link to="/adopt-home" className='pt-2 fs-4 fw-medium nav-link-custom'>Adopt Me</Link>
           <Link to="/vets" className='pt-2 fs-4 fw-medium nav-link-custom'>Vets</Link>
-          <Link to="/Login" className='pt-2 fs-4 fw-medium nav-link-custom'>Login</Link>
           <Link to="/signup" className='pt-2 fs-4 fw-medium nav-link-custom'>Sign Up</Link>
         </div>
 

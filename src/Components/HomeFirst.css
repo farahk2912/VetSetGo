@@ -5,6 +5,10 @@
   margin: 0 auto;
   padding: 1rem;
 }
+.clickable-card {
+  cursor: pointer;
+}
+
 
 @media (max-width: 768px) {
   .hero-content-wrapper h1 {
