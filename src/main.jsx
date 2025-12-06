@@ -4,11 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { Route,Routes } from 'react-router-dom'
 import "./index.css";
 
-
-createRoot(document.getElementById('root')).render(
- 
-   <BrowserRouter>  
-   <App />
-   </BrowserRouter>
- 
-)
+createRoot(document.getElementById("root")).render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+);

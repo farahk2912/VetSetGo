@@ -1,14 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home";
-import Navbar from "./Components/Navbar";
-import Profile from "./pages/profile"; // Changed from profile to Profile
-import { PetProvider } from "./Components/petContext"; 
-import Community from "./pages/Community"
-import LogInpage from './pages/Login-page/LogInpage';
-import CommunityPage2 from './Components/CommunityPage2';
-import SignUPpage from './pages/Signup-page/SignUPpage';
-import AdoptHome from "./pages/adoptHome/adoptHome";
-import Adopt from "./pages/Adopt/Adopt";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import HospitalsPage from "./Pages/HospitalsPage";
+import "./index.css";
 
 
 function App() {
@@ -28,4 +22,5 @@ function App() {
     </PetProvider>
   );
 }
-export default App
+
+export default App;
