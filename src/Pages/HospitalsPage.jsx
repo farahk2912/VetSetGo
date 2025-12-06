@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaPaw } from "react-icons/fa";
-import MapView from "../components/MapView";
-import VetCard from "../components/VetCard";
-import { BookingModal, DetailsModal } from "../components/Modals";
+import MapView from "../Components/MapView";
+import VetCard from "../Components/VetCard";
+import { BookingModal, DetailsModal } from "../Components/Modals";
 import { mockVets } from "../data/mockVets";
 
 function HospitalsPage() {

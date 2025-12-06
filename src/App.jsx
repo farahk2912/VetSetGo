@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import HospitalsPage from "./Pages/HospitalsPage";
+import HospitalsPage from "./pages/HospitalsPage";
 import "./index.css";
 
 function App() {
@@ -13,11 +12,9 @@ function App() {
                 flexDirection: "column",
             }}
         >
-            <Navbar />
-
             <div style={{ flexGrow: 1 }}>
                 <Routes>
-                    <Route path="/" element={<HospitalsPage />} />
+                    <Route path="/vets" element={<HospitalsPage />} />
                 </Routes>
             </div>
         </div>
