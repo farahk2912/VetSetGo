@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaPaw } from "react-icons/fa";
-import MapView from "../components/MapView";
-import VetCard from "../Components/VetCard";
 import { BookingModal, DetailsModal } from "../components/Modals";
 import { mockVets } from "../data/mockVets";
 import "./HospitalPage.css";
+import MapView from "../components/MapView";
+import VetCard from "../Components/VetCard";
 
 function HospitalsPage() {
     const [showDetails, setShowDetails] = useState(false);
