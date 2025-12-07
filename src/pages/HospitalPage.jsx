@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { FaPaw } from "react-icons/fa";
 import { BookingModal, DetailsModal } from "../components/Modals";
 import { mockVets } from "../data/mockVets";
 import "./HospitalPage.css";
-import MapView from "../components/MapView";
-import VetCard from "../Components/VetCard";
+import VetCard from "../components/VetCard";
+
+// Lazy load MapView to prevent SSR issues with Leaflet
+const MapView = lazy(() => import("../components/MapView"));
 
 function HospitalsPage() {
     const [showDetails, setShowDetails] = useState(false);
@@ -102,7 +104,13 @@ function HospitalsPage() {
                             className="card border-0 shadow-sm rounded-4 overflow-hidden flex-grow-1 h-100"
                             style={{ minHeight: 0 }}
                         >
-                            <MapView vets={mockVets} />
+                            <Suspense fallback={
+                                <div className="d-flex justify-content-center align-items-center h-100">
+                                    <p style={{ color: "#7472C6" }}>Loading map...</p>
+                                </div>
+                            }>
+                                <MapView vets={mockVets} />
+                            </Suspense>
                         </div>
                     </div>
                 </div>
