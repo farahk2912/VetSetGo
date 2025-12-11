@@ -2,12 +2,13 @@
 import React, { useState, lazy, Suspense, useEffect } from "react";
 import { FaPaw } from "react-icons/fa";
 import "./HospitalPage.css";
-import VetCard from "../components/VetCard";
+
 import { hospitalAPI } from "../services/hospitalAPI"; // ✅ NEW
 
 const MapView = lazy(() => import("../components/MapView"));
 import { BookingModal } from './../Components/Modals';
 import { DetailsModal } from "./../Components/Modals";
+import VetCard from './../Components/VetCard';
 
 function HospitalsPage() {
   const [hospitals, setHospitals] = useState([]); // ✅ real data
