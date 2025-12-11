@@ -1,8 +1,22 @@
+// services/api.js
+
+// Get API base URL — use VITE_API_URL in production, localhost in dev
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-// Optional: Add logging to see which URL is being used
-console.log('API URL:', API_URL);
+// Helper to get auth token
+const getAuthToken = () => {
+  return localStorage.getItem('token');
+};
 
+// Helper to make authenticated requests
+const authHeaders = () => {
+  const token = getAuthToken();
+  return token ? { 'x-auth-token': token } : {};
+};
+
+// ======================
+// AUTH API (existing)
+// ======================
 export const authAPI = {
   // Register new user
   register: async (name, email, password) => {
@@ -21,7 +35,6 @@ export const authAPI = {
         throw new Error(data.msg || 'Registration failed');
       }
 
-      // Save token to localStorage
       if (data.token) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
@@ -50,7 +63,6 @@ export const authAPI = {
         throw new Error(data.msg || 'Login failed');
       }
 
-      // Save token to localStorage
       if (data.token) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
@@ -82,5 +94,54 @@ export const authAPI = {
   // Get token
   getToken: () => {
     return localStorage.getItem('token');
+  },
+};
+
+// ======================
+// PET API (new)
+// ======================
+export const petAPI = {
+  // Save a new pet for the logged-in user
+  savePet: async (petData) => {
+    const token = getAuthToken();
+    if (!token) {
+      throw new Error('You must be logged in to add a pet');
+    }
+
+    const response = await fetch(`${API_URL}/api/pets`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...authHeaders(),
+      },
+      body: JSON.stringify(petData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.msg || 'Failed to save pet');
+    }
+
+    return response.json();
+  },
+
+  // Get all pets for the logged-in user
+  getPets: async () => {
+    const token = getAuthToken();
+    if (!token) {
+      return [];
+    }
+
+    const response = await fetch(`${API_URL}/api/pets`, {
+      headers: {
+        ...authHeaders(),
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch pets');
+    }
+
+    return response.json(); // returns array of pets
   },
 };
