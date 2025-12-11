@@ -6,7 +6,7 @@ import "./HospitalPage.css";
 import { hospitalAPI } from "../services/hospitalAPI"; // ✅ NEW
 import MapView from "../components/MapView";
 
-const MapView = lazy(() => import("../components/MapView"));
+// const MapView = lazy(() => import("../components/MapView"));
 import { BookingModal } from './../Components/Modals';
 import { DetailsModal } from "./../Components/Modals";
 import VetCard from './../Components/VetCard';
