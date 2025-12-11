@@ -1,5 +1,3 @@
-// LeftPart.jsx - Updated with backend connection
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authAPI } from '../../services/api';
@@ -7,39 +5,32 @@ import { authAPI } from '../../services/api';
 const LeftPart = () => {
   const navigate = useNavigate();
   
-  // Form state
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     rememberMe: false,
   });
 
-  // UI state
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? checked : value,
     });
-    // Clear errors when user types
     setError('');
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validation
     if (!formData.email || !formData.password) {
       setError('Please fill in all fields');
       return;
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setError('Please enter a valid email address');
@@ -52,13 +43,13 @@ const LeftPart = () => {
     try {
       await authAPI.login(formData.email, formData.password);
       
-      // Optional: Handle "Remember Me" functionality
       if (formData.rememberMe) {
         localStorage.setItem('rememberMe', 'true');
       }
 
-      // Redirect to dashboard after successful login
-      navigate('/dashboard');
+      // ✅ CHANGED: Redirect to Home instead of Dashboard
+      navigate('/');
+      window.location.reload(); // Refresh to update navbar
 
     } catch (err) {
       setError(err.message || 'Invalid email or password. Please try again.');
@@ -86,7 +77,6 @@ const LeftPart = () => {
     >
       <h2>Welcome Back!</h2>
 
-      {/* Error Message */}
       {error && (
         <div
           className="alert alert-danger mt-3"
@@ -176,7 +166,6 @@ const LeftPart = () => {
         </button>
       </form>
 
-      {/* Optional: Forgot Password Link */}
       <div className="mt-3">
         <a
           href="/forgot-password"
@@ -190,7 +179,6 @@ const LeftPart = () => {
         </a>
       </div>
 
-      {/* Optional: Sign Up Link */}
       <div className="d-flex gap-2 mt-2">
         <p className="fs-6 text-body-secondary mb-0">Don't have an account?</p>
         <a

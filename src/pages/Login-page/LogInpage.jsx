@@ -44,7 +44,7 @@ const LogInpage = () => {
   )
 }
 
-export default LogInpage
+export default LogInpage;
 
 
 

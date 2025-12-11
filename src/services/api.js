@@ -1,4 +1,7 @@
-const API_URL = 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+// Optional: Add logging to see which URL is being used
+console.log('API URL:', API_URL);
 
 export const authAPI = {
   // Register new user
