@@ -4,6 +4,7 @@ import { FaPaw } from "react-icons/fa";
 import "./HospitalPage.css";
 
 import { hospitalAPI } from "../services/hospitalAPI"; // ✅ NEW
+import MapView from "../components/MapView";
 
 const MapView = lazy(() => import("../components/MapView"));
 import { BookingModal } from './../Components/Modals';
