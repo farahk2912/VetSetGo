@@ -105,16 +105,17 @@ export const petAPI = {
   // Save a new pet
   savePet: async (petData) => {
     const token = getAuthToken();
-    if (!token) throw new Error('You must be logged in to add a pet');
+if (!token) throw new Error('You must be logged in to add a pet');
 
-    const response = await fetch(`${API_URL}/api/pets`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        ...authHeaders(),
-      },
-      body: JSON.stringify(petData),
-    });
+const response = await fetch(`${API_URL}/api/pets`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-auth-token': token,  // <- ensure token is here
+  },
+  body: JSON.stringify(petData),
+});
+
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
