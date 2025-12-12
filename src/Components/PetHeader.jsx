@@ -17,7 +17,7 @@ export default function PetHeader() {
     formData.append("petId", pet._id);
 
     try {
-      const res = await fetch("http://localhost:5000/api/pets/upload-image", {
+      const res = await fetch("http://vetsetgoback-production-14d6.up.railway.app/api/pets/upload-image", {
         method: "POST",
         body: formData,
       });

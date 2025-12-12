@@ -1,5 +1,5 @@
 // src/services/hospitalAPI.js
-const API_URL = "https://vetsetgoback-production-4383.up.railway.app" ;
+const API_URL = "http://vetsetgoback-production-14d6.up.railway.app";
 // const API_URL =  'http://localhost:5000';
 
 export const hospitalAPI = {
