@@ -1,12 +1,16 @@
 
-
 import React from 'react';
-// import ".../index.css"
-
+import '../index.css'
 import { HiOutlineCalendarDateRange } from "react-icons/hi2";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const RightColumn = () => {
+  const navigate = useNavigate();
+
+  const handleAdoptClick = () => {
+    navigate("/adopt-home");
+  };
+
   return (
     <div className="d-flex flex-column gap-3 w-100">
 
@@ -17,7 +21,6 @@ const RightColumn = () => {
         </div>
 
         <div className="d-flex flex-column gap-2 p-2 ms-5">
-
           <div className="d-flex flex-wrap align-items-center text-warning gap-2">
             <div className="text-center">
               <p className="m-0 fw-bold">23</p>
@@ -50,22 +53,21 @@ const RightColumn = () => {
               <p className="m-0 fw-bold">Pet Health Workshop</p>
             </div>
           </div>
-
         </div>
       </div>
 
-      <div className="rounded-4 w-100 position-relative" style={{minHeight: "22rem", background: 'url("/images/adoptionBoxPhoto.png")', backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+      <div className="rounded-4 w-100 position-relative" style={{minHeight: "22rem", background: 'url("adoptionBoxPhoto.png")', backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
         <div className="d-flex flex-column h-100 justify-content-between p-3">
 
           <div className="d-flex justify-content-between align-items-center">
             <p className="fw-bold fs-5 text-light m-0">Adoption Corner</p>
-            <Link className="text-light" style={{textDecoration: "none"}}>View All</Link>
+            <p className="text-light" style={{textDecoration: "none"}}>View All</p>
           </div>
 
           <div className="d-flex justify-content-center align-items-end gap-3 flex-wrap">
-            <div className="rounded-circle" style={{width: "4rem", height: "4rem", backgroundImage: 'url("images/Adopt2.jpg")', backgroundSize: "cover", opacity: 0.6}}></div>
-            <div className="rounded-circle" style={{width: "8rem", height: "8rem", backgroundImage: 'url("images/Adobt1.jpeg")', backgroundSize: "cover"}}></div>
-            <div className="rounded-circle" style={{width: "4rem", height: "4rem", backgroundImage: 'url("images/Adopt3.jpeg")', backgroundSize: "cover", opacity: 0.6}}></div>
+            <div className="rounded-circle" style={{width: "4rem", height: "4rem", backgroundImage: 'url("/images/Adopt2.jpg")', backgroundSize: "cover", opacity: 0.6}}></div>
+            <div className="rounded-circle" style={{width: "8rem", height: "8rem", backgroundImage: 'url("/images/Adobt1.jpeg")', backgroundSize: "cover"}}></div>
+            <div className="rounded-circle" style={{width: "4rem", height: "4rem", backgroundImage: 'url("/images/Adopt3.jpeg")', backgroundSize: "cover", opacity: 0.6}}></div>
           </div>
 
           <div className="text-center text-light">
@@ -74,7 +76,13 @@ const RightColumn = () => {
               <p className="m-0">Cargo</p>
               <p className="m-0">3 months</p>
             </div>
-            <button className="btn bg-light rounded-4 mt-2 w-50 fs-5" style={{color: "#7472C6"}}>Adopt me</button>
+            <button 
+              className="btn bg-light rounded-4 mt-2 w-50 fs-5" 
+              style={{color: "#7472C6"}}
+              onClick={handleAdoptClick} 
+            >
+              Adopt me
+            </button>
           </div>
 
         </div>

@@ -15,6 +15,7 @@ import HospitalsPage from './pages/HospitalPage';
 import ProtectedRoute from './Components/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profile2 from './pages/profile2';
+import CommunityPage1 from './Components/CommunityPage1';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<LogInpage />} />
         <Route path="/signup" element={<SignUPpage />} />
-        <Route path="/Community" element={<CommunityPage2 />} />
+        <Route path="/Community" element={<CommunityPage1 />} />
+        <Route path="/Community2" element={<CommunityPage2 />} />
         <Route path="/adopt-home" element={<AdoptHome />} />
         <Route path="/adopt" element={<Adopt />} />
         <Route path="/Vets" element={<HospitalsPage />} />
