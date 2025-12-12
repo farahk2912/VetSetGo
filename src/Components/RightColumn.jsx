@@ -56,7 +56,7 @@ const RightColumn = () => {
         </div>
       </div>
 
-      <div className="rounded-4 w-100 position-relative" style={{minHeight: "22rem", background: 'url("adoptionBoxPhoto.png")', backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+      <div className="rounded-4 w-100 position-relative" style={{minHeight: "22rem", background: 'url("/images/adoptionBoxPhoto.png")', backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
         <div className="d-flex flex-column h-100 justify-content-between p-3">
 
           <div className="d-flex justify-content-between align-items-center">

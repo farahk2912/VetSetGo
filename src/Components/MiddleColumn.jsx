@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";     // 3shan 2t7km f el bianat w 2shoof el ta8ieerat
 import { FaRegCommentDots } from "react-icons/fa";
 import React from 'react'; //bistwrd mktabt react ely mn 5lalha h2dr 2sh8l el jsx w el components
-import '../index.css';
+import "../index.css"
 import { SlLocationPin } from "react-icons/sl";
 import { CiImageOn } from "react-icons/ci";
 import { IoVideocamOutline } from "react-icons/io5";
@@ -126,14 +126,24 @@ const MiddleColumn = () => {
           <div className="d-flex flex-wrap gap-3">
             <div className="d-flex align-items-center gap-1 p-2 rounded-pill" style={{backgroundColor: "#E4E1EE"}}>
               <SlLocationPin className="fs-5" style={{color: "#7472C6"}} />
-              <input 
-                type="text"
-                placeholder="Add Location"
-                className="form-control border-0 p-0 bg-transparent"
-                style={{width: newLocation.length > 0 ? `${newLocation.length * 8 + 50}px` : "120px"}} 
-                value={newLocation}
-                onChange={(e) => setNewLocation(e.target.value)}
-              />
+              <input
+  type="text"
+  placeholder="Add Location"
+  className="form-control border-0 p-0 bg-transparent location-input"
+  style={{
+    color: "#7472C6",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    maxWidth: "150px",
+    width: newLocation.length > 0
+      ? `${newLocation.length * 8 + 50}px`
+      : "120px"
+  }}
+  value={newLocation}
+  onChange={(e) => setNewLocation(e.target.value)}
+/>
+
             </div>
 
             <div 

@@ -12,6 +12,11 @@
   padding-bottom: 120px;
 }
 
+.location-input::placeholder {
+  color: #7472C6;
+  opacity: 1; /* important for Firefox */
+}
+
 @media (max-width: 768px) {
   .hero-content-wrapper {
     padding-bottom: 180px; 
