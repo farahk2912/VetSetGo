@@ -14,6 +14,7 @@ import Adopt from "./pages/Adopt/Adopt";
 import HospitalsPage from './pages/HospitalPage';
 import ProtectedRoute from './Components/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import profile2 from './pages/profile2';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/adopt" element={<Adopt />} />
         <Route path="/Vets" element={<HospitalsPage />} />
         <Route path="/Pet-Form" element={<PetsForm />} />
+                <Route path="/profile2" element={<profile2 />} />
         {/* ============================================ */}
         {/* PROTECTED ROUTES */}
         {/* ============================================ */}

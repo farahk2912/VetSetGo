@@ -62,7 +62,7 @@ export default function Form() {
       }
 
       alert('Pet saved successfully!');
-      navigate('/profile'); // ✅ Smooth SPA navigation
+      navigate('/profile2'); // ✅ Smooth SPA navigation
     } catch (err) {
       console.error('Form submit error:', err);
       alert('Error: ' + (err.message || 'Something went wrong'));
