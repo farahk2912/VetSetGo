@@ -1,7 +1,7 @@
 // services/api.js
 
 // Get API base URL — use VITE_API_URL in production, localhost in dev
-const API_URL = "https://vetsetgoback-production-4383.up.railway.app" || 'http://localhost:5000';
+const API_URL = "https://vetsetgoback-production-4383.up.railway.app";
 // const API_URL =  'http://localhost:5000';
 
 // Helper to get auth token
