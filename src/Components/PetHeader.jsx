@@ -6,12 +6,35 @@ import './PetHeader.css';
 import { usePet } from './petContext';
 
 export default function PetHeader() {
-  const { pet } = usePet();
+  const { pet, setPet } = usePet(); // <-- make sure setPet is here
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("petId", pet._id);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/pets/upload-image", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.imageUrl) {
+        setPet((prev) => ({ ...prev, img: data.imageUrl }));
+      }
+    } catch (err) {
+      console.error("Error uploading image:", err);
+    }
+  };
 
   // Fallbacks in case some fields are missing
   const name = pet?.name || 'Unknown';
   const breed = pet?.breed || pet?.type || 'Unknown';
-  const img = '/default-pet.png'; // or use a real default image
 
   return (
     <div style={{ backgroundColor: '#ffffff', padding: '2em' }}>
@@ -25,12 +48,16 @@ export default function PetHeader() {
         <div className="d-flex align-items-center gap-4 flex-wrap">
           <div
             className="rounded-4 overflow-hidden shadow border border-white zoom"
-            style={{ width: '220px', height: '220px' }}
+            style={{ width: "220px", height: "220px" }}
           >
             <img
-              src={img}
-              alt={name}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              src={
+                pet.img?.startsWith("http")
+                  ? pet.img
+                  : `http://localhost:5000/api/pets${pet.img}`
+              }
+              alt={pet.name}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </div>
 
@@ -39,15 +66,19 @@ export default function PetHeader() {
             <h3 style={{ fontWeight: '400' }}>{breed}</h3>
 
             <div className="d-flex gap-3 mt-3">
-              <button className="btn btn-light px-4 py-2 fw-semibold">
-                Hiii!
-              </button>
+              <input
+                type="file"
+                id="uploadInput"
+                accept="image/*"
+                onChange={handleFileChange}
+                style={{ display: "none" }}
+              />
 
               <button
-                className="btn btn-light d-flex justify-content-center align-items-center rounded-circle"
-                style={{ width: '3em', height: '3em' }}
+                className="btn btn-light px-4 py-2 fw-semibold"
+                onClick={() => document.getElementById("uploadInput").click()}
               >
-                <i className="bi bi-share"></i>
+                Edit Profile
               </button>
             </div>
           </div>
