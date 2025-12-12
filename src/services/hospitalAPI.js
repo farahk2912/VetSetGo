@@ -1,5 +1,5 @@
 // src/services/hospitalAPI.js
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = "https://vetsetgoback-production-ca43.up.railway.app" || 'http://localhost:5000';
 
 export const hospitalAPI = {
   // Get all hospitals (with optional search/specialty)
