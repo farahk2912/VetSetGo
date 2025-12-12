@@ -1,6 +1,6 @@
 // src/components/Form.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ For better navigation
+import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
   const [name, setName] = useState('');
@@ -8,22 +8,16 @@ export default function Form() {
   const [breed, setBreed] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
-  const navigate = useNavigate(); // ✅ Use React Router navigation
+  const navigate = useNavigate();
+
+  // ✅ Use environment variable or fallback
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Basic validation
     if (!name || !type || !gender) {
       alert('Please fill in all required fields');
-      return;
-    }
-
-    // ✅ Safely get API URL
-   const API_URL = "http://vetsetgoback-production-14d6.up.railway.app";
-    if (!API_URL) {
-      console.error('VITE_API_URL is not defined in environment');
-      alert('Backend configuration error. Please contact support.');
       return;
     }
 
@@ -44,25 +38,22 @@ export default function Form() {
         })
       });
 
-      // ✅ Safe JSON parsing — handle non-JSON responses
       let responseData;
       const contentType = response.headers.get('content-type');
       if (contentType && contentType.includes('application/json')) {
         responseData = await response.json();
       } else {
-        // If not JSON (e.g., HTML error page), read as text
         const text = await response.text();
-        console.warn('Non-JSON response from server:', text);
-        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+        console.warn('Non-JSON response:', text);
+        throw new Error(`Server error: ${response.status}`);
       }
 
       if (!response.ok) {
-        const msg = responseData.msg || 'Failed to save pet';
-        throw new Error(msg);
+        throw new Error(responseData.msg || 'Failed to save pet');
       }
 
       alert('Pet saved successfully!');
-      navigate('/profile'); // ✅ Smooth SPA navigation
+      navigate('/profile');
     } catch (err) {
       console.error('Form submit error:', err);
       alert('Error: ' + (err.message || 'Something went wrong'));
