@@ -2,6 +2,7 @@
 
 // Get API base URL — use VITE_API_URL in production, localhost in dev
 const API_URL = "https://vetsetgoback-production-4383.up.railway.app" || 'http://localhost:5000';
+// const API_URL =  'http://localhost:5000';
 
 // Helper to get auth token
 const getAuthToken = () => {
@@ -101,12 +102,10 @@ export const authAPI = {
 // PET API (new)
 // ======================
 export const petAPI = {
-  // Save a new pet for the logged-in user
+  // Save a new pet
   savePet: async (petData) => {
     const token = getAuthToken();
-    if (!token) {
-      throw new Error('You must be logged in to add a pet');
-    }
+    if (!token) throw new Error('You must be logged in to add a pet');
 
     const response = await fetch(`${API_URL}/api/pets`, {
       method: 'POST',
@@ -125,23 +124,27 @@ export const petAPI = {
     return response.json();
   },
 
-  // Get all pets for the logged-in user
+  // Get all pets
   getPets: async () => {
     const token = getAuthToken();
-    if (!token) {
-      return [];
-    }
+    if (!token) return [];
 
     const response = await fetch(`${API_URL}/api/pets`, {
-      headers: {
-        ...authHeaders(),
-      },
+      headers: { ...authHeaders() },
     });
 
+    // Handle HTTP status
     if (!response.ok) {
       throw new Error('Failed to fetch pets');
     }
 
-    return response.json(); // returns array of pets
+    // 204 No Content → return empty array
+    if (response.status === 204) return [];
+
+    // 304 Not Modified → return empty array (or use cached logic)
+    if (response.status === 304) return [];
+
+    // Normal 200 response
+    return response.json();
   },
 };
