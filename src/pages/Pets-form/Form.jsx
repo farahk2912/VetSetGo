@@ -20,7 +20,7 @@ export default function Form() {
     }
 
     // ✅ Safely get API URL
-    const API_URL = "http://localhost:5000";
+    const API_URL = "https://vetsetgoback-production-4383.up.railway.app";
     if (!API_URL) {
       console.error('VITE_API_URL is not defined in environment');
       alert('Backend configuration error. Please contact support.');
