@@ -7,33 +7,28 @@ import { authAPI } from '../../services/api';
 const Right = () => {
   const navigate = useNavigate();
   
-  // Form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
   });
 
-  // UI state
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-    // Clear errors when user types
+
     setError('');
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validation
     if (!formData.name || !formData.email || !formData.password) {
       setError('Please fill in all fields');
       return;
@@ -55,10 +50,9 @@ const Right = () => {
       );
 
       setSuccess('Account created successfully! Redirecting...');
-      
-      // Redirect to dashboard/home after 1 second
+ 
       setTimeout(() => {
-        navigate('/dashboard'); // Change to your dashboard route
+        navigate('/dashboard');
       }, 1000);
 
     } catch (err) {
@@ -80,7 +74,6 @@ const Right = () => {
     >
       <h2>Create Your Account</h2>
 
-      {/* Error Message */}
       {error && (
         <div
           className="alert alert-danger mt-3"
@@ -90,7 +83,6 @@ const Right = () => {
         </div>
       )}
 
-      {/* Success Message */}
       {success && (
         <div
           className="alert alert-success mt-3"
