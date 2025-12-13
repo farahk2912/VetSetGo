@@ -1,11 +1,11 @@
 import React from "react";
-import { FaMapMarkerAlt, FaClock, FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
 const VetCard = ({ vet, onBook, onDetails }) => {
     return (
         <div
-            className="card shadow-soft vet-card-hover rounded-4 p-4 h-100"
-            style={{ backgroundColor: "#E5E1EE" }}
+            className="card w-100 border-0 shadow-sm rounded-4 p-4"
+            style={{ backgroundColor: "#E5E1EE", transition: "transform 0.2s" }}
         >
             <div className="d-flex gap-3">
                 <img
@@ -16,12 +16,13 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                         width: "5.5rem",
                         height: "5.5rem",
                         objectFit: "cover",
+                        flexShrink: 0,
                     }}
                 />
-                <div className="flex-grow-1">
+                <div className="flex-grow-1" style={{ minWidth: 0 }}>
                     <div className="d-flex justify-content-between align-items-start">
                         <h6
-                            className="fw-bold mb-1"
+                            className="fw-bold mb-1 text-truncate"
                             style={{ fontSize: "1rem", color: "#7472C6" }}
                         >
                             {vet.name}
@@ -32,24 +33,25 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                                     ? "bg-success-subtle text-success"
                                     : "bg-danger-subtle text-danger"
                             }`}
-                            style={{ fontSize: "0.75rem" }}
+                            style={{ fontSize: "0.75rem", flexShrink: 0 }}
                         >
                             {vet.isOpen ? "Open" : "Closed"}
                         </span>
                     </div>
 
                     <p
-                        className="small mb-1 d-flex align-items-center gap-2"
+                        className="small mb-1 d-flex align-items-center gap-2 text-truncate"
                         style={{ color: "#7472C6" }}
                     >
-                        <FaMapMarkerAlt /> {vet.address}
+                        <FaMapMarkerAlt />{" "}
+                        <span className="text-truncate">{vet.address}</span>
                     </p>
 
                     <div
                         className="d-flex align-items-center gap-2 small mt-2"
                         style={{ color: "#7472C6" }}
                     >
-                        <FaStar /> <b>{vet.rating}</b>{" "}
+                        <FaStar className="text-warning" /> <b>{vet.rating}</b>{" "}
                         <span
                             style={{ fontWeight: "normal", color: "#7472C6" }}
                         >
@@ -62,7 +64,7 @@ const VetCard = ({ vet, onBook, onDetails }) => {
             <div className="d-flex gap-3 mt-4">
                 <button
                     onClick={() => onDetails(vet)}
-                    className="btn w-100 rounded-pill fw-semibold py-2"
+                    className="btn w-100 rounded-pill fw-semibold py-2 btn-sm"
                     style={{
                         backgroundColor: "#7472C6",
                         color: "#fff",
@@ -73,14 +75,14 @@ const VetCard = ({ vet, onBook, onDetails }) => {
                 </button>
                 <button
                     onClick={() => onBook(vet)}
-                    className="btn w-100 rounded-pill fw-semibold py-2"
+                    className="btn w-100 rounded-pill fw-semibold py-2 btn-sm"
                     style={{
                         backgroundColor: "#7472C6",
                         color: "#fff",
                         border: "none",
                     }}
                 >
-                    Book Appointment
+                    Book
                 </button>
             </div>
         </div>
