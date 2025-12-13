@@ -38,21 +38,23 @@ function HospitalsPage() {
         const loadHospitals = async () => {
             try {
                 const data = await hospitalAPI.getHospitals();
+                 console.log("Raw hospital data:", data); // 👈 ADD THIS
+            console.log("First hospital image:", data[0]?.image); // 👈 ADD THIS
                 const mapped = data.map((hospital) => ({
-                    id: hospital._id,
-                    name: hospital.name,
-                    address: hospital.address,
-                    rating: hospital.rating || 0,
-                    isOpen: true,
-                    hours: "See details",
-                    image: hospital.image || "/default-hospital.png",
-                    phone: hospital.phone,
-                    email: hospital.email,
-                    lat: hospital.location?.lat || 30.0444,
-                    lng: hospital.location?.lng || 31.2357,
-                    specialties: hospital.specialties,
-                    description: hospital.description,
-                }));
+  id: hospital._id,
+  name: hospital.name,
+  address: hospital.address,
+  rating: hospital.rating || 0,
+  isOpen: true,
+  hours: "See details",
+  image: hospital.image || "https://via.placeholder.com/500x300?text=Hospital",
+  phone: hospital.phone,
+  email: hospital.email,
+  lat: hospital.location?.lat || 30.0444,
+  lng: hospital.location?.lng || 31.2357,
+  specialties: hospital.specialties,
+  description: hospital.description,
+}));
                 setHospitals(mapped);
             } catch (err) {
                 console.error("Failed to load hospitals:", err);
