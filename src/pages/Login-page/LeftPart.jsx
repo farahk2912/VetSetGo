@@ -47,9 +47,8 @@ const LeftPart = () => {
         localStorage.setItem('rememberMe', 'true');
       }
 
-      // ✅ CHANGED: Redirect to Home instead of Dashboard
       navigate('/');
-      window.location.reload(); // Refresh to update navbar
+      window.location.reload();
 
     } catch (err) {
       setError(err.message || 'Invalid email or password. Please try again.');
