@@ -2,6 +2,7 @@
 import React from 'react';
 import './PetCards.css';
 import { usePet } from './petContext';
+import { BiCake2, BiPerson, BiBrush } from "react-icons/bi";
 
 export default function PetCards() {
   const { pet } = usePet();
@@ -45,4 +46,5 @@ export default function PetCards() {
       ))}
     </div>
   );
+
 }
