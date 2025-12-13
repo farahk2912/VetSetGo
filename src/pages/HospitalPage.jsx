@@ -38,8 +38,8 @@ function HospitalsPage() {
         const loadHospitals = async () => {
             try {
                 const data = await hospitalAPI.getHospitals();
-                 console.log("Raw hospital data:", data); // 👈 ADD THIS
-            console.log("First hospital image:", data[0]?.image); // 👈 ADD THIS
+                 console.log("Raw hospital data:", data);
+            console.log("First hospital image:", data[0]?.image);
                 const mapped = data.map((hospital) => ({
   id: hospital._id,
   name: hospital.name,
