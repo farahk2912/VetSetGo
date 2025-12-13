@@ -1,3 +1,10 @@
+
+
+
+
+    
+
+
 import React from 'react'
 import LeftPart from './LeftPart'
 import RightPart from './RightPart'
@@ -45,10 +52,3 @@ const LogInpage = () => {
 }
 
 export default LogInpage
-
-
-
-
-    
-
-
