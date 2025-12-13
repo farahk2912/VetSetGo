@@ -1,4 +1,3 @@
-// src/components/Profile.jsx
 import React from 'react';
 import { usePet } from '../Components/petContext';
 import PetHeader from './../Components/PetHeader';
