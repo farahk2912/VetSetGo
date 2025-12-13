@@ -5,6 +5,5 @@
 }
 
 .nav-link-custom:hover {
-  color: #7544A6;      /* Hover color */
-  transform: scale(1.05); /* Slight zoom effect */
-}
+  color: #7544A6;      
+  transform: scale(1.05); 
