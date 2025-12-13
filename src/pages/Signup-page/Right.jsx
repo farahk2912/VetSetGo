@@ -1,5 +1,3 @@
-// Right.jsx - Updated to redirect to Home after signup
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
@@ -9,19 +7,16 @@ import { authAPI } from '../../services/api';
 const Right = () => {
   const navigate = useNavigate();
   
-  // Form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
   });
 
-  // UI state
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -30,11 +25,9 @@ const Right = () => {
     setError('');
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Validation
+
     if (!formData.name || !formData.email || !formData.password) {
       setError('Please fill in all fields');
       return;
@@ -56,11 +49,10 @@ const Right = () => {
       );
 
       setSuccess('Account created successfully! Welcome to VetSetGo! 🎉');
-      
-      // ✅ CHANGED: Redirect to Home instead of Dashboard
+
       setTimeout(() => {
-        navigate('/'); // Redirect to home page
-        window.location.reload(); // Refresh to update navbar
+        navigate('/');
+        window.location.reload();
       }, 1000);
 
     } catch (err) {
@@ -82,7 +74,6 @@ const Right = () => {
     >
       <h2>Create Your Account</h2>
 
-      {/* Error Message */}
       {error && (
         <div
           className="alert alert-danger mt-3"
@@ -92,7 +83,6 @@ const Right = () => {
         </div>
       )}
 
-      {/* Success Message */}
       {success && (
         <div
           className="alert alert-success mt-3"
