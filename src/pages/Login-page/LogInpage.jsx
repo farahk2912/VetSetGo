@@ -24,10 +24,10 @@ const LogInpage = () => {
         max-width: 95%;
         height: auto !important; 
         min-height: 55vh !important; 
-        margin: 2em auto !important; /* مسافة من فوق وتحت */
+        margin: 2em auto !important; 
         border-radius: 2em !important; 
-        padding-top: 2em;    /* مسافة داخلية من فوق */
-        padding-bottom: 2em; /* مسافة داخلية من تحت */
+        padding-top: 2em;  
+        padding-bottom: 2em;
       }
 
       .d-flex.flex-column.flex-md-row {
