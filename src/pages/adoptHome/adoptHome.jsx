@@ -1,7 +1,7 @@
 import React from "react";
 import "./adoptHome.css";
 import { Link } from "react-router-dom";
-import { FaPaw } from "react-icons/fa"; // Paw icon
+import { FaPaw } from "react-icons/fa";
 
 function adoptHome() {
     return (
@@ -20,7 +20,7 @@ function adoptHome() {
                     boxSizing: "border-box",
                 }}
             >
-                {/* Header */}
+
                 <header className="d-flex justify-content-between align-items-center mb-4 flex-nowrap">
                     <div className="d-flex align-items-center gap-2">
                         <FaPaw className="fs-3 Pawicon" />
@@ -49,7 +49,7 @@ function adoptHome() {
                     </nav>
                 </header>
 
-                {/* Hero Section */}
+
                 <section className="row align-items-center mb-4 g-0">
                     <div className="col-md-6">
                         <h1 className="fw-bold mb-2">Adopt a Pet</h1>
@@ -87,7 +87,7 @@ function adoptHome() {
                     </div>
                 </section>
 
-                {/* Community & Urgent Section */}
+
                 <section className="row g-3 flex-grow-0">
                     <div className="col-md-6 d-flex flex-column">
                         <h6 className="fw-bold mb-2">Community</h6>
