@@ -11,7 +11,7 @@ export default function Form() {
   const navigate = useNavigate();
 
   // ✅ Use environment variable or fallback
-const API_URL = "https://vetsetgoback-production-14d6.up.railway.app" || 'http://localhost:5000';;
+const API_URL = "https://vetsetgoback-production-dbce.up.railway.app" || 'http://localhost:5000';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

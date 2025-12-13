@@ -8,7 +8,7 @@ export default function PetHeader() {
   const { pet, setPet } = usePet();
 
   // ✅ Dynamic backend URL
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_URL = "https://vetsetgoback-production-dbce.up.railway.app" || 'http://localhost:5000';
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
@@ -23,7 +23,7 @@ export default function PetHeader() {
         method: "POST",
         headers: {
           'x-auth-token': localStorage.getItem('token') // ✅ Add auth!
-          
+
         },
         body: formData,
       });
