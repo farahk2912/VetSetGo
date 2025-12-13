@@ -26,8 +26,7 @@ const LogInpage = () => {
         min-height: 55vh !important; 
         margin: 2em auto !important; 
         border-radius: 2em !important; 
-        padding-top: 2em;  
-        padding-bottom: 2em;
+       
       }
 
       .d-flex.flex-column.flex-md-row {
