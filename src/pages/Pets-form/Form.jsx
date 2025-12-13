@@ -1,4 +1,3 @@
-// src/components/Form.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +9,6 @@ export default function Form() {
   const [gender, setGender] = useState('');
   const navigate = useNavigate();
 
-  // ✅ Use environment variable or fallback
 const API_URL = "https://vetsetgoback-production-dbce.up.railway.app" || 'http://localhost:5000';
 
   const handleSubmit = async (e) => {
