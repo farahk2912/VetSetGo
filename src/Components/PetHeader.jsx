@@ -23,6 +23,7 @@ export default function PetHeader() {
         method: "POST",
         headers: {
           'x-auth-token': localStorage.getItem('token') // ✅ Add auth!
+          
         },
         body: formData,
       });

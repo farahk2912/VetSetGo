@@ -5,10 +5,9 @@ import { petAPI } from '../services/api';
 const PetContext = createContext();
 
 export const PetProvider = ({ children }) => {
-  const [pet, setPet] = useState(null); // latest pet only
+  const [pet, setPet] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Load latest pet on mount
   useEffect(() => {
     const loadPet = async () => {
       try {
@@ -22,20 +21,19 @@ export const PetProvider = ({ children }) => {
         setLoading(false);
       }
     };
-
     loadPet();
   }, []);
 
   const savePet = async (petData) => {
     const newPet = await petAPI.savePet(petData);
-    // Refresh and set latest pet
     const pets = await petAPI.getPets();
     setPet(pets[0]);
     return newPet;
   };
 
+  // ✅ Expose setPet so PetHeader can update the pet directly
   return (
-    <PetContext.Provider value={{ pet, savePet, loading }}>
+    <PetContext.Provider value={{ pet, setPet, savePet, loading }}>
       {children}
     </PetContext.Provider>
   );
